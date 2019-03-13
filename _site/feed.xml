@@ -3,10 +3,10 @@
   <channel>
     <title>imatmati-blog</title>
     <description></description>
-    <link>http://imatmati.github.io/blog//</link>
-    <atom:link href="http://imatmati.github.io/blog//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 13 Mar 2019 22:34:53 +0100</pubDate>
-    <lastBuildDate>Wed, 13 Mar 2019 22:34:53 +0100</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 13 Mar 2019 23:06:29 +0100</pubDate>
+    <lastBuildDate>Wed, 13 Mar 2019 23:06:29 +0100</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -53,12 +53,9 @@ reflect.Value slices used as arguments and returned values types make fn suitabl
 		&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reflect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NumOut&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
 		&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// ... corresponding to each returned value type.&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
 		&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NumOut&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-			&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;/* 
-			Every channel is built by reflection. 
-			ChanOf creates the type of the channel from the type of the corresponding returned value.
-			MakeChan builds the channel from the specification returned by ChanOf.
-			 Pay attention that MakeChan can only accept channel that sends and receives (BothDir).
-			 */&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;/* 
+	Every channel is built by reflection. ChanOf creates the type of the channel from the type of the corresponding returned value. MakeChan builds the channel from the specification returned by ChanOf. Pay attention that MakeChan can only accept channel that sends and receives (BothDir).
+*/&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
 			&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reflect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MakeChan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reflect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChanOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reflect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BothDir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
 		&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
 		&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// The original function is called.&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
@@ -292,8 +289,8 @@ Nevertheless, it can make your code more usable and readable and reflection API 
 And now you’re expert in a very advanced language feature !&lt;/p&gt;
 </description>
         <pubDate>Wed, 13 Mar 2019 00:00:00 +0100</pubDate>
-        <link>http://imatmati.github.io/blog//posts/golang-reflection</link>
-        <guid isPermaLink="true">http://imatmati.github.io/blog//posts/golang-reflection</guid>
+        <link>http://localhost:4000/posts/golang-reflection</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/golang-reflection</guid>
         
         <category>Golang</category>
         
@@ -699,8 +696,8 @@ The story is not over …&lt;/p&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 20 Nov 2016 00:00:00 +0100</pubDate>
-        <link>http://imatmati.github.io/blog//posts/seneca-docker</link>
-        <guid isPermaLink="true">http://imatmati.github.io/blog//posts/seneca-docker</guid>
+        <link>http://localhost:4000/posts/seneca-docker</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/seneca-docker</guid>
         
         <category>Microservice</category>
         
@@ -1038,8 +1035,8 @@ Yes, it’s Base 64 encoded, so decode it and you’ll get something like :&lt;/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sat, 14 May 2016 00:00:00 +0200</pubDate>
-        <link>http://imatmati.github.io/blog//posts/passport-express-wso2</link>
-        <guid isPermaLink="true">http://imatmati.github.io/blog//posts/passport-express-wso2</guid>
+        <link>http://localhost:4000/posts/passport-express-wso2</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/passport-express-wso2</guid>
         
         <category>SAML</category>
         

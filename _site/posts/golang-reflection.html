@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/public/stylesheets/styles.css">
     <link rel="stylesheet" href="/public/stylesheets/pygment_trac.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="canonical" href="http://imatmati.github.io/blog//posts/golang-reflection">
+    <link rel="canonical" href="http://localhost:4000/posts/golang-reflection">
     <link rel="stylesheet" href="/public/stylesheets/syntax.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
       <link rel="icon" type="image/x-icon"  href="/favicon.ico" />
@@ -118,12 +118,9 @@ reflect.Value slices used as arguments and returned values types make fn suitabl
 		</span><span class="n">results</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="nb">make</span><span class="p">([]</span><span class="n">reflect</span><span class="o">.</span><span class="n">Value</span><span class="p">,</span><span class="x"> </span><span class="n">t</span><span class="o">.</span><span class="n">NumOut</span><span class="p">())</span><span class="x">
 		</span><span class="c">// ... corresponding to each returned value type.</span><span class="x">
 		</span><span class="k">for</span><span class="x"> </span><span class="n">i</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="m">0</span><span class="p">;</span><span class="x"> </span><span class="n">i</span><span class="x"> </span><span class="o">&lt;</span><span class="x"> </span><span class="n">t</span><span class="o">.</span><span class="n">NumOut</span><span class="p">();</span><span class="x"> </span><span class="n">i</span><span class="o">++</span><span class="x"> </span><span class="p">{</span><span class="x">
-			</span><span class="c">/* 
-			Every channel is built by reflection. 
-			ChanOf creates the type of the channel from the type of the corresponding returned value.
-			MakeChan builds the channel from the specification returned by ChanOf.
-			 Pay attention that MakeChan can only accept channel that sends and receives (BothDir).
-			 */</span><span class="x">
+</span><span class="c">/* 
+	Every channel is built by reflection. ChanOf creates the type of the channel from the type of the corresponding returned value. MakeChan builds the channel from the specification returned by ChanOf. Pay attention that MakeChan can only accept channel that sends and receives (BothDir).
+*/</span><span class="x">
 			</span><span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="n">reflect</span><span class="o">.</span><span class="n">MakeChan</span><span class="p">(</span><span class="n">reflect</span><span class="o">.</span><span class="n">ChanOf</span><span class="p">(</span><span class="n">reflect</span><span class="o">.</span><span class="n">BothDir</span><span class="p">,</span><span class="x"> </span><span class="n">t</span><span class="o">.</span><span class="n">Out</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span><span class="x"> </span><span class="m">0</span><span class="p">)</span><span class="x">
 		</span><span class="p">}</span><span class="x">
 		</span><span class="c">// The original function is called.</span><span class="x">

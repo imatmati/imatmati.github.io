@@ -49,12 +49,9 @@ reflect.Value slices used as arguments and returned values types make fn suitabl
 		results := make([]reflect.Value, t.NumOut())
 		// ... corresponding to each returned value type.
 		for i := 0; i < t.NumOut(); i++ {
-			/* 
-			Every channel is built by reflection. 
-			ChanOf creates the type of the channel from the type of the corresponding returned value.
-			MakeChan builds the channel from the specification returned by ChanOf.
-			 Pay attention that MakeChan can only accept channel that sends and receives (BothDir).
-			 */
+/* 
+	Every channel is built by reflection. ChanOf creates the type of the channel from the type of the corresponding returned value. MakeChan builds the channel from the specification returned by ChanOf. Pay attention that MakeChan can only accept channel that sends and receives (BothDir).
+*/
 			results[i] = reflect.MakeChan(reflect.ChanOf(reflect.BothDir, t.Out(i)), 0)
 		}
 		// The original function is called.
